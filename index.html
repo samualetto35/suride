@@ -2,15 +2,25 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Google Sheets Verisi</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kullanıcı Dostu Arayüz</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Apple'a uygun sistem fontu -->
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Google Sheets’ten Çekilen Veriler</h1>
-    <div id="data-container"></div>
-  </div>
+  <header class="header">
+    <h1>Veri Kartları</h1>
+  </header>
+  <main class="container">
+    <div id="data-container">
+      <!-- JSON verileri buraya eklenecek -->
+    </div>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
