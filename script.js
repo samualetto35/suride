@@ -1,36 +1,25 @@
-// 1. Google Apps Script’ten aldığınız JSON verisinin URL’sini buraya girin:
-const apiUrl = "https://script.google.com/macros/s/AKfycbw5GyHX04FcPONRpFGvXxj291suRvDEKaQBmzT352k-APMLPE-CRL1aRBQEgYIPCqeq/exec";
+// JSON verisinin bulunduğu Apps Script API URL'sini buraya yapıştırın
+const apiUrl = "https://script.google.com/macros/s/XXX/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById("data-container");
-      
-      // data bir dizi (array) olduğu için forEach ile dönüyoruz
       data.forEach(item => {
-        // Örneğin Sheet’teki başlıklar: Sürücü ID, İsim Soyisim, Email, Telefon vb.
-        // item["Sürücü ID"], item["İsim Soyisim"] gibi erişebilirsiniz
-        const div = document.createElement("div");
-        div.classList.add("data-item");
+        // Her bir veriyi kart olarak oluşturuyoruz
+        const card = document.createElement("div");
+        card.classList.add("data-card");
         
-        // Burada, istediğiniz UI tasarımını kurabilirsiniz.
-        // Örneğin, tablo veya liste şeklinde göstermek mümkün.
-        div.innerHTML = `
-          <p><strong>Sürücü ID:</strong> ${item["Sürücü ID"] || ""}</p>
-          <p><strong>İsim Soyisim:</strong> ${item["İsim Soyisim"] || ""}</p>
-          <p><strong>Email:</strong> ${item["Email"] || ""}</p>
-          <p><strong>Telefon:</strong> ${item["Telefon"] || ""}</p>
-          <p><strong>Ne Zaman?:</strong> ${item["Ne Zaman?"] || ""}</p>
-          <p><strong>Nereye?:</strong> ${item["Nereye?"] || ""}</p>
-          <p><strong>Not:</strong> ${item["Not"] || ""}</p>
-          <p><strong>İletişim Bilgisi Gönder:</strong> ${item["İletişim Bilgisi Gönder"] || ""}</p>
+        // Kart içeriği: Tasarımı Figma'dan aldığınız şablona göre uyarlayabilirsiniz
+        card.innerHTML = `
+          <h2>${item["İsim Soyisim"] || "İsim Yok"}</h2>
+          <p><strong>Email:</strong> ${item["Email"] || "Bilinmiyor"}</p>
+          <p><strong>Telefon:</strong> ${item["Telefon"] || "Bilinmiyor"}</p>
         `;
         
-        container.appendChild(div);
+        container.appendChild(card);
       });
     })
-    .catch(error => {
-      console.error("Veriler çekilemedi:", error);
-    });
+    .catch(error => console.error("Veriler alınamadı:", error));
 });
