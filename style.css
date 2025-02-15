@@ -1,23 +1,67 @@
+/* Genel Düzen */
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
-.container {
-  max-width: 600px;
-  margin: 50px auto;
-  background: #fff;
-  border-radius: 6px;
+/* Header - Minimal ve temiz bir başlık */
+.header {
+  background-color: #ffffff;
   padding: 20px;
-}
-
-h1 {
+  border-bottom: 1px solid #e0e0e0;
   text-align: center;
 }
 
-.data-item {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* İçerik konteyneri */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Kart Tasarımı */
+.data-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: transform 0.2s ease;
+}
+
+.data-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Kart içeriği */
+.data-card h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #111;
+}
+
+.data-card p {
+  margin: 8px 0;
+  line-height: 1.5;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Responsive tasarım */
+@media (max-width: 600px) {
+  .data-card {
+    padding: 12px;
+  }
+  
+  .header h1 {
+    font-size: 20px;
+  }
 }
