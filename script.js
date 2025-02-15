@@ -1,5 +1,5 @@
 // JSON verisinin bulunduğu Apps Script API URL'sini buraya yapıştırın
-const apiUrl = "https://script.google.com/macros/s/XXX/exec";
+const apiUrl = "https://script.google.com/macros/s/AKfycbw5GyHX04FcPONRpFGvXxj291suRvDEKaQBmzT352k-APMLPE-CRL1aRBQEgYIPCqeq/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   fetch(apiUrl)
